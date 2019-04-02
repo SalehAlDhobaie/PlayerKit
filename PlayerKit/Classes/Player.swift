@@ -20,16 +20,12 @@ public enum PlayerError: Int
     /// The associated error
     ///
     /// - Returns: The error
-    public func error() -> NSError
-    {
-        switch self
-        {
+    public func error() -> NSError {
+        switch self{
         case .unknown:
-            
             return NSError(domain: type(of: self).Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: "An unknown error occurred."])
             
         case .loading:
-            
             return NSError(domain: type(of: self).Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: "An error occurred while loading the content."])
         }
     }
